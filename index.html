@@ -1,81 +1,48 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Lab 02 | Stock Portfolio Dashboard</title>
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,400i,700" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-
-  <script src="/data/users.js"></script>
-  <script src="/data/stocks-complete.js"></script>
-  <script src="/app.js"></script>
+  <meta charset="UTF-8" />
+  <title>Stock Portfolio Dashboard</title>
 </head>
-
 <body>
+  <h1>Stock Portfolio Dashboard</h1>
 
-  <header>
-    <h1>Lab 02 | Stock Portfolio Dashboard</h1>
-  </header>
-  <main class="grid-container">
+  <div class="user-section">
+    <h2>Users</h2>
+    <ul class="user-list"></ul>
+  </div>
 
-    <section class="user-list-container">
-      <h2>Users</h2>
-      <ul class="user-list"></ul>
-    </section>
+  <div class="form-section">
+    <h2>User Details</h2>
+    <form>
+      <input id="userID" type="hidden">
+      <label>First Name: <input id="firstname" /></label><br>
+      <label>Last Name: <input id="lastname" /></label><br>
+      <label>Address: <input id="address" /></label><br>
+      <label>City: <input id="city" /></label><br>
+      <label>Email: <input id="email" /></label><br>
+      <button id="saveButton">Save</button>
+      <button id="deleteButton">Delete</button>
+    </form>
+  </div>
 
-    <section class="Details">
-      <div class="UserForm">
-        <h2>User Form</h2>
-        <form class="userEntry">
-          <input type=hidden id="userID" />
-          <label for="firstname">Name </label>
-          <input type=text id="firstname" class="one" />
-          <input type=text id="lastname" class="two" />
-          <label for="address">Address </label>
-          <input type=text id="address" class="one" />
-          <input type=text id="city" class="two" />
-          <label for="email">Email </label>
-          <input type=email id="email" class="both" />
-          <button class="one" id="btnSave">Save</button>
-          <button class="two" id="btnDelete">Delete</button>
-        </form>
-      </div>
-      <div class="Portfolio">
-        <div class="StockList">
-          <h2>Portfolio</h2>
-          <div class="portfolio-list">
-            <h3>Symbol</h3>
-            <h3># Shares</h3>
-            <h3>Actions</h3>
-          </div>
-        </div>
-        <div class="StockDetails">
-          <h2>Details</h2>
-          <div class="stock-form">
-            <div class="logoContainer">
-              <img id="logo" />
-            </div>
-            <p class="stockLabel">Name</p>
-            <p id="stockName"></p>
-            <p class="stockLabel">Sector</p>
-            <p id="stockSector"></p>
-            <p class="stockLabel">Industry</p>
-            <p id="stockIndustry"></p>
-            <p class="stockLabel">Address</p>
-            <p id="stockAddress"></p>
-          </div>
+  <div class="portfolio-section">
+    <h2>Portfolio</h2>
+    <div class="portfolio-list"></div>
+  </div>
 
-        </div>
-      </div>
+  <div class="stock-form">
+    <h2>Stock Info</h2>
+    <p><strong>Name:</strong> <span id="stockName"></span></p>
+    <p><strong>Sector:</strong> <span id="stockSector"></span></p>
+    <p><strong>Industry:</strong> <span id="stockIndustry"></span></p>
+    <p><strong>Address:</strong> <span id="stockAddress"></span></p>
+    <img id="logo" width="80" height="80" />
+  </div>
 
-    </section>
-
-
-  </main>
-
+  <!-- Load data + app -->
+  <script src="data/users.js"></script>
+  <script src="data/stocks-complete.js"></script>
+  <script src="app.js"></script>
 </body>
-
 </html>
